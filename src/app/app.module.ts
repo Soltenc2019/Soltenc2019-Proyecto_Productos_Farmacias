@@ -15,9 +15,9 @@ import { HttpClientModule } from '@angular/common/http';
 //componentes
 import { HomeComponent } from './Pages/home/home.component';
 import { RegistrarComponent,DialogModificarProducto, DialogAgregarProducto} from './Pages/RegistrarProducto/registrar.component';
-import { NuevoComponent } from './Pages/NuevoProducto/nuevo.component';
+
 import { RegistrarfarmaciaComponent,DialogModificarFarmacia,DialogAgregarFarmacia} from './Pages/RegistrarFarmacia/registrarfarmacia.component';
-import { NuevofarmaciaComponent } from './Pages/NuevoFarmacia/nuevofarmacia.component'; 
+
 import { HeaderComponent } from './Share/navigation/header/header.component';
 import { SidenavListComponent } from './Share/navigation/sidenav-list/sidenav-list.component';
 import { LayoutComponent } from './Share/layout/layout.component';
@@ -33,9 +33,9 @@ import {Globals} from './Share/Global';
     DialogAgregarProducto,
     DialogModificarFarmacia,
     DialogAgregarFarmacia,
-    NuevoComponent,
+
     RegistrarfarmaciaComponent,
-    NuevofarmaciaComponent,
+
     HeaderComponent,
     SidenavListComponent,
     LayoutComponent,

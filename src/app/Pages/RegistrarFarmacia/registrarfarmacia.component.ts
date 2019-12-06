@@ -1,7 +1,7 @@
 import { Component, OnInit, Inject, ViewChild } from '@angular/core';
 import {MatTableDataSource} from '@angular/material/table';
 import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
-import { NuevofarmaciaComponent } from '../NuevoFarmacia/nuevofarmacia.component';
+
 import Swal from 'sweetalert2';
 import {RegistrarService} from './Registrar.Service';
 import {Farmacia} from './farmacia.model';
