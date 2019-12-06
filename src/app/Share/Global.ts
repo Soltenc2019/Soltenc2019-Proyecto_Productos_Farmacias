@@ -6,4 +6,5 @@ export class Globals {
   hidetoolbar: boolean=true;
   idUsuario: string="";
   Usuario: string="";
+  urlService: "http://localhost:3000/"
 }

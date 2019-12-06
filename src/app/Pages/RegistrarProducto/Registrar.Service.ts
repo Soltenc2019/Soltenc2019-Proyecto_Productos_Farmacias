@@ -1,20 +1,28 @@
 import { Injectable} from '@angular/core';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 import { Producto } from './producto.model';
+import {NgModule} from '@angular/core';
+import {Globals} from '../../Share/Global';
 
 const httpOptions = {
   headers: new HttpHeaders({
   'content-Type': 'application/json'
 })
 };
+@NgModule({
+  providers: [Globals ], // this depends on situation, see below
+  imports: [
+  
+  ]
+})
 
 @Injectable({
     providedIn: 'root'
 })
 export class RegistrarService{
-    configUrl='http://localhost:3000/productos';
-    constructor(private http: HttpClient){ }
-
+   
+    constructor(private http: HttpClient,private globals : Globals){ }
+    configUrl=this.globals.urlService +'productos';
       getProductos(){
         return this.http.get<any>(this.configUrl,httpOptions);
       }

@@ -1,20 +1,26 @@
 import { Injectable} from '@angular/core';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 import { Farmacia } from './farmacia.model';
-
+import {NgModule} from '@angular/core';
+import {Globals} from '../../Share/Global';
 const httpOptions = {
   headers: new HttpHeaders({
   'content-Type': 'application/json'
 })
 };
-
+@NgModule({
+  providers: [Globals ], // this depends on situation, see below
+  imports: [
+  
+  ]
+})
 @Injectable({
     providedIn: 'root'
 })
 export class RegistrarService{
-    configUrl='http://localhost:3000/farmacias';
-    constructor(private http: HttpClient){ }
-    
+    //configUrl='http://localhost:3000/farmacias';
+      constructor(private http: HttpClient, private globals : Globals){ }
+    configUrl=this.globals.urlService + 'farmacias';
 
 
     getFarmacias(){
