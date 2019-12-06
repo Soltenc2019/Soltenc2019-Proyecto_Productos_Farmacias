@@ -1,1 +1,13 @@
-/* You can add global styles to this file, and also import other style files */
+
+/* for sidenav to take a whole page */
+@import "../node_modules/@angular/material/prebuilt-themes/purple-green.css";
+html, body { 
+    
+    height: 100%;
+
+}
+body {
+    font-family: Roboto,Arial,sans-serif;
+    margin: 0;
+
+}

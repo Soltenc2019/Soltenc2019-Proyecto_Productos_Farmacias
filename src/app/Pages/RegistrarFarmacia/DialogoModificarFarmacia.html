@@ -1,0 +1,34 @@
+<h1 mat-dialog-title>Modificar Farmacia</h1>
+<div mat-dialog-content *ngFor="let Farmacia of data">
+    
+  <mat-form-field style="margin-left: 3%;width: 30%;">
+    <input matInput placeholder="Nombre Farmacia" [(ngModel)]="Farmacia.no_Farmacia" >
+    </mat-form-field>
+  <mat-form-field style="margin-left: 3%;width: 30%;"> 
+    <input matInput placeholder="Principio Activo" [(ngModel)]="Farmacia.no_Contacto">
+  </mat-form-field>
+
+  <mat-form-field style="margin-left: 3%;width: 30%;">
+    <input matInput  placeholder="Correo" [(ngModel)]="Farmacia.no_Correo">
+  </mat-form-field>
+
+  <mat-form-field style="margin-left: 3%;width: 30%;">
+        <input matInput  placeholder="Teefono" [(ngModel)]="Farmacia.nu_Telefono">
+  </mat-form-field>
+
+  <mat-form-field style="margin-left: 3%;width: 30%;">
+        <input matInput  placeholder="Celular" [(ngModel)]="Farmacia.nu_celular">
+  </mat-form-field>
+
+  <mat-form-field style="margin-left: 3%;width: 30%;">
+        <input matInput  placeholder="Dirección" [(ngModel)]="Farmacia.no_Direccion">
+  </mat-form-field>
+
+</div>
+<div mat-dialog-actions>
+    <div style="margin: 0 auto;
+    display: inline-block;">
+  <button mat-raised-button color="primary" (click)="ActualizarProducto(data)" >Modificar</button>
+  <button mat-raised-button color="primary" (click)="onNoClick()">Cancelar</button>
+  </div>
+</div> 

@@ -1,0 +1,41 @@
+ <mat-card class="mat-card"> 
+  <mat-card-title style="text-align: center;font-size: 50px;">
+    <hr>
+    Encuentre el mejor precio de productos farmacéuticos
+    <hr>
+  </mat-card-title>
+  <mat-card-content style="text-align: center;font-size: 20px;">
+    Encuentre la farmacia mas cercana
+  </mat-card-content>
+  </mat-card> 
+  <mat-card class="mat-card">
+      <mat-card-title >
+        <div class="divCenter">
+          <form class="divCenter">
+              <mat-form-field class="example-full-width">
+                <input matInput placeholder="Nombre del Producto">             
+              </mat-form-field>  
+              <button mat-button (click)="resultado()">BUSCAR</button>         
+          </form>
+        </div>
+      </mat-card-title>
+  </mat-card>
+
+
+    <div *ngIf="mostrar" class="cardList">
+        <ng-container *ngFor="let title of fetchData">
+          <mat-card class="cardListItem">
+              
+          <mat-card-title>
+              {{title.title}}
+          </mat-card-title>
+          <mat-card-content>
+              {{title.description}}
+          </mat-card-content>
+          <img mat-card-image src="{{title.ruta}}" style="height: 70%;width: 50%;">
+          </mat-card>
+        </ng-container>
+    </div>
+
+
+    

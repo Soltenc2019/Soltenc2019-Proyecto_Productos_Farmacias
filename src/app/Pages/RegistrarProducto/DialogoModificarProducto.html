@@ -1,0 +1,74 @@
+<h1 mat-dialog-title style="text-align: center;">Modificar Producto</h1>
+<div mat-dialog-content *ngFor="let Producto of data">
+  <mat-form-field style="margin-left: 3%;">
+    <input matInput placeholder="Nombre Producto" [(ngModel)]="Producto.no_Producto" >
+    </mat-form-field>
+  <mat-form-field  style="margin-left: 3%;">
+    <input matInput placeholder="Principio Activo" [(ngModel)]="Producto.no_Principio_Activo">
+  </mat-form-field>
+  <mat-form-field style="margin-left: 3%;width: 40%;">
+    <mat-label>Categoria</mat-label>
+                <mat-select [(value)]="Producto.co_Categoria">
+                  <mat-option value="C001">BELLEZA</mat-option>
+                  <mat-option value="C002">BIENESTAR SEXUAL</mat-option>
+                  <mat-option value="C003">CUIDADO PERSONAL  </mat-option>
+                  <mat-option value="C004">FARMACIA Y SALUD</mat-option>
+                  <mat-option value="C005">MAMÁ Y BEBÉ</mat-option>
+                  <mat-option value="C006">VITAMINAS / SUPLEMENTOS</mat-option>
+                  <mat-option value="C007">ELECTROBELLEZA</mat-option>
+                </mat-select>
+  </mat-form-field>
+  <mat-form-field style="margin-left: 3%; width: 40%;">
+    <mat-label>Sub Categoria</mat-label>
+                <mat-select [(value)]="Producto.co_SubCategoria">
+                    <mat-option value="SBE001">COSMÉTICOS</mat-option>
+                    <mat-option value="SBE002">CUIDADO DE MANOS Y PIES</mat-option>
+                    <mat-option value="SBE003">BAÑO Y CUERPO</mat-option>
+                    <mat-option value="SBS001">ANTICONCEPTIVOS - PRESERVATIVOS</mat-option>
+                    <mat-option value="SBS002">LUBRICANTES Y HUMECTANTES</mat-option>
+                    <mat-option value="SCP001">BAÑO Y CUERPO</mat-option>
+                    <mat-option value="SCP002">CUIDADO ORAL</mat-option>
+                    <mat-option value="SCP003">PRIMEROS AUXILIOS</mat-option>
+                    <mat-option value="SCP004">CUIDADO DE LOS PIES</mat-option>
+                    <mat-option value="SFS001">ALIVIO DE HEMORROIDES</mat-option>
+                    <mat-option value="SFS002">ALIVIO DEL DOLOR</mat-option>
+                    <mat-option value="SFS003">CUIDADO OFTALMOLÓGICO</mat-option>
+                    <mat-option value="SFS004">GRIPE, RESFRIADO Y TOS</mat-option>
+                    <mat-option value="SFS005">PRIMEROS AUXILIOS</mat-option>
+                    <mat-option value="SFS006">PRUEBAS Y MONITOREO</mat-option>
+                    <mat-option value="SFS007">SALUD DIGESTIVA</mat-option>
+                    <mat-option value="SFS008">CUIDADO FEMENINO</mat-option>
+                    <mat-option value="SMB001">ACCESORIOS CUIDADO INFANTIL</mat-option>
+                    <mat-option value="SMB002">CUIDADO PIEL-MAMÁ Y BEBÉ</mat-option>
+                    <mat-option value="SMB003">CUIDADO INFANTIL</mat-option>
+                    <mat-option value="SMB004">EMBARAZO Y FERTILIDAD</mat-option>
+                    <mat-option value="SMB005">FÓRMULA Y ALIMENTO PARA BEBÉ</mat-option>
+                    <mat-option value="SMB006">PAÑALES Y PAÑITOS HUMEDOS</mat-option>
+                    <mat-option value="SVS001">CALCIO Y MINERALES</mat-option>
+                    <mat-option value="SVS002">EMBARAZO Y FERTILIDAD</mat-option>
+                    <mat-option value="SVS003">MULTIVITAMÍNICOS</mat-option>
+                    <mat-option value="SVS004">SUPLEMENTOS PARA ADULTOS</mat-option>
+                    <mat-option value="SEB001">ALISADORES Y RISADORES</mat-option>
+                    <mat-option value="SEB002">SECADORES DE CABELLO</mat-option>
+                </mat-select>
+  </mat-form-field>
+  <mat-form-field style="margin-left: 3%">
+    <mat-label>Unidad</mat-label>
+                <mat-select [(value)]="Producto.co_Unidad">
+                  <mat-option value="CJA">CAJA</mat-option>
+                  <mat-option value="KT">KIT</mat-option>
+                  <mat-option value="UND">UNIDAD</mat-option>
+                </mat-select>
+  </mat-form-field>
+  <mat-form-field style="margin-left: 3%">
+    <input matInput  placeholder="Precio" [(ngModel)]="Producto.qt_Precio">
+  </mat-form-field>
+
+</div>
+<div mat-dialog-actions>
+    <div style="margin: 0 auto;
+    display: inline-block;">
+  <button mat-raised-button color="primary" (click)="ActualizarProducto(data)" >Modificar</button>
+  <button mat-raised-button color="primary" (click)="onNoClick()" >Cancelar</button>
+</div>
+</div> 

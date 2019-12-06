@@ -1,0 +1,79 @@
+     
+  <h1 mat-dialog-title>Agregar Farmacia</h1>
+  <mat-form-field style="margin-left: 3%;">
+        <input matInput  placeholder="Codigo Farmacia" [formControl]="coFarmaciaFormControl" [(ngModel)]="co_Farmacia">
+        <mat-error *ngIf="coFarmaciaFormControl.hasError('noFarmacia') && !coFarmaciaFormControl.hasError('required')">
+        </mat-error>
+        <mat-error *ngIf="coFarmaciaFormControl.hasError('required')">
+          Codigo de Farmacia  es <strong>requerido</strong>
+        </mat-error>
+    </mat-form-field>
+  <mat-form-field  style="margin-left: 3%;">
+        <input matInput #coRuc maxlength="11" placeholder="RUC" [(ngModel)]="co_ruc" [formControl]="rucFarmaciaFormControl">
+        <mat-hint align="end">{{coRuc.value.length}} / 11</mat-hint>
+        <mat-error *ngIf="rucFarmaciaFormControl.hasError('rucarmacia') && !rucFarmaciaFormControl.hasError('required')">
+          </mat-error>
+          <mat-error *ngIf="rucFarmaciaFormControl.hasError('required')">
+              Razón Social es <strong>requerido</strong>
+            </mat-error>
+  </mat-form-field>
+  <mat-form-field style="margin-left: 3%; width: 43%;" >
+        <input matInput  placeholder="Razón Social" [formControl]="noFarmaciaFormControl" [(ngModel)]="no_Farmacia">
+        <mat-error *ngIf="noFarmaciaFormControl.hasError('noFarmacia') && !noFarmaciaFormControl.hasError('required')">
+        </mat-error>
+        <mat-error *ngIf="noFarmaciaFormControl.hasError('required')">
+          Razón Social es <strong>requerido</strong>
+        </mat-error>
+  </mat-form-field>
+  <mat-form-field style="margin-left: 3%;" >
+        <input matInput  placeholder="Contacto" [formControl]="contactoFormControl" [(ngModel)]="no_Contacto">
+        <mat-error *ngIf="contactoFormControl.hasError('contacto') && !contactoFormControl.hasError('required')">
+        </mat-error>
+        <mat-error *ngIf="contactoFormControl.hasError('required')">
+          Contacto es <strong>requerido</strong>
+        </mat-error>
+  </mat-form-field>
+  <mat-form-field style="margin-left: 3%;" >
+        <input matInput placeholder="Correo" [formControl]="emailFormControl" [(ngModel)]="no_Correo">
+                  
+        <mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
+          Correo incorrecto
+        </mat-error>
+        <mat-error *ngIf="emailFormControl.hasError('required')">
+          Correo es <strong>requerido</strong>
+        </mat-error>
+  </mat-form-field>
+  <mat-form-field style="margin-left: 3%; width: 20%;" >
+        <input matInput #nu_tel placeholder="N° Telefono" maxlength="7" [formControl]="telefonoFormControl" [(ngModel)]="nu_Telefono">
+        <mat-hint align="end">{{nu_tel.value.length}} / 7</mat-hint>
+        <mat-error *ngIf="telefonoFormControl.hasError('telefono') && !telefonoFormControl.hasError('required')">
+        </mat-error>
+        <mat-error *ngIf="telefonoFormControl.hasError('required')">
+          Telefono es <strong>requerido</strong>
+        </mat-error>
+  </mat-form-field>
+  <mat-form-field style="margin-left: 3%; width: 20%;" >
+        <input matInput #nu_cel placeholder="N° Celular" maxlength="9" [formControl]="celularFormControl" [(ngModel)]="nu_celular">
+        <mat-hint align="end">{{nu_cel.value.length}} / 9</mat-hint>
+        <mat-error *ngIf="celularFormControl.hasError('celular') && !celularFormControl.hasError('required')">
+        </mat-error>
+        <mat-error *ngIf="celularFormControl.hasError('required')">
+          Celular es <strong>requerido</strong>
+        </mat-error>
+  </mat-form-field>
+  <mat-form-field style="margin-left: 3%; width: 40%;" >
+        <input matInput  placeholder="Direccion" [formControl]="direccionFormControl" [(ngModel)]="no_Direccion">
+        <mat-error *ngIf="direccionFormControl.hasError('direccion') && !direccionFormControl.hasError('required')">
+        </mat-error>
+        <mat-error *ngIf="direccionFormControl.hasError('required')">
+          Direccion es <strong>requerido</strong>
+        </mat-error>
+  </mat-form-field>
+<div mat-dialog-actions>
+    <div style="margin: 0 auto;
+    display: inline-block;">
+  <button mat-raised-button color="primary" (click)="InsertarFarmacia()" color="primary">Aceptar</button>
+  <button mat-raised-button color="primary"  [mat-dialog-close] color="primary">Cancelar</button>
+  </div>  
+</div> 
+

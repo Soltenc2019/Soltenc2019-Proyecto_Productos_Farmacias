@@ -1,0 +1,137 @@
+<mat-card >
+    <mat-card-title>
+      Agregar Farmacia
+    </mat-card-title>
+    <div class="divCenter">  
+      <div class="cardList">
+          <mat-card class="cardListItem">
+              <div mat-dialog-content >
+                <!-- <p>Codigo Farmacia</p>
+                  <input matInput [(ngModel)]="co_Farmacia"> -->
+
+                  <mat-form-field>
+                    <input matInput  placeholder="Codigo Farmacia" [formControl]="coFarmaciaFormControl" [(ngModel)]="co_Farmacia">
+                    <mat-error *ngIf="coFarmaciaFormControl.hasError('noFarmacia') && !coFarmaciaFormControl.hasError('required')">
+                    </mat-error>
+                    <mat-error *ngIf="coFarmaciaFormControl.hasError('required')">
+                      Codigo de Farmacia  es <strong>requerido</strong>
+                    </mat-error>
+                  </mat-form-field>
+      
+              </div>
+            </mat-card>
+      <mat-card class="cardListItem">
+        <div mat-dialog-content >
+
+            <mat-form-field >
+                <input matInput #coRuc maxlength="11" placeholder="RUC" [(ngModel)]="co_ruc" [formControl]="rucFarmaciaFormControl">
+                <mat-hint align="end">{{coRuc.value.length}} / 11</mat-hint>
+                <mat-error *ngIf="rucFarmaciaFormControl.hasError('rucarmacia') && !rucFarmaciaFormControl.hasError('required')">
+                  </mat-error>
+                  <mat-error *ngIf="rucFarmaciaFormControl.hasError('required')">
+                      Razón Social es <strong>requerido</strong>
+                    </mat-error>
+              </mat-form-field>
+        </div>
+      </mat-card>
+      <mat-card class="cardListItem">
+        <div mat-dialog-content>
+          <!-- <p>Razón Social</p>
+            <input matInput [(ngModel)]="no_Farmacia"> -->
+
+            <mat-form-field>
+              <input matInput  placeholder="Razón Social" [formControl]="noFarmaciaFormControl" [(ngModel)]="no_Farmacia">
+              <mat-error *ngIf="noFarmaciaFormControl.hasError('noFarmacia') && !noFarmaciaFormControl.hasError('required')">
+              </mat-error>
+              <mat-error *ngIf="noFarmaciaFormControl.hasError('required')">
+                Razón Social es <strong>requerido</strong>
+              </mat-error>
+            </mat-form-field>
+
+        </div>
+      </mat-card>
+      <mat-card class="cardListItem">
+        <div mat-dialog-content>
+          <!-- <p>Contacto</p>
+            <input matInput [(ngModel)]="no_Contacto"> -->
+
+            <mat-form-field>
+              <input matInput  placeholder="Contacto" [formControl]="contactoFormControl" [(ngModel)]="no_Contacto">
+              <mat-error *ngIf="contactoFormControl.hasError('contacto') && !contactoFormControl.hasError('required')">
+              </mat-error>
+              <mat-error *ngIf="contactoFormControl.hasError('required')">
+                Contacto es <strong>requerido</strong>
+              </mat-error>
+            </mat-form-field>
+
+        </div>
+      </mat-card>
+      <mat-card class="cardListItem">
+        <div mat-dialog-content>
+
+            <mat-form-field>
+              <input matInput placeholder="Correo" [formControl]="emailFormControl" [(ngModel)]="no_Correo">
+              
+              <mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
+                Correo incorrecto
+              </mat-error>
+              <mat-error *ngIf="emailFormControl.hasError('required')">
+                Correo es <strong>requerido</strong>
+              </mat-error>
+            </mat-form-field>
+
+        </div>
+      </mat-card>
+      <mat-card class="cardListItem">
+        <div mat-dialog-content>
+          <!-- <p>N° Telefono</p>
+            <input matInput [(ngModel)]="nu_Telefono"> -->
+
+            <mat-form-field>
+              <input matInput #nu_tel placeholder="N° Telefono" maxlength="7" [formControl]="telefonoFormControl" [(ngModel)]="nu_Telefono">
+              <mat-hint align="end">{{nu_tel.value.length}} / 7</mat-hint>
+              <mat-error *ngIf="telefonoFormControl.hasError('telefono') && !telefonoFormControl.hasError('required')">
+              </mat-error>
+              <mat-error *ngIf="telefonoFormControl.hasError('required')">
+                Telefono es <strong>requerido</strong>
+              </mat-error>
+            </mat-form-field>
+        </div>
+      </mat-card>
+      <mat-card class="cardListItem">
+          <div mat-dialog-content>
+
+              <mat-form-field>
+                <input matInput #nu_cel placeholder="N° Celular" maxlength="9" [formControl]="celularFormControl" [(ngModel)]="nu_celular">
+                <mat-hint align="end">{{nu_cel.value.length}} / 9</mat-hint>
+                <mat-error *ngIf="celularFormControl.hasError('celular') && !celularFormControl.hasError('required')">
+                </mat-error>
+                <mat-error *ngIf="celularFormControl.hasError('required')">
+                  Celular es <strong>requerido</strong>
+                </mat-error>
+              </mat-form-field>
+          </div>
+        </mat-card>
+        <mat-card class="cardListItem">
+            <div mat-dialog-content>
+
+                <mat-form-field>
+                  <input matInput  placeholder="Direccion" [formControl]="direccionFormControl" [(ngModel)]="no_Direccion">
+                  <mat-error *ngIf="direccionFormControl.hasError('direccion') && !direccionFormControl.hasError('required')">
+                  </mat-error>
+                  <mat-error *ngIf="direccionFormControl.hasError('required')">
+                    Direccion es <strong>requerido</strong>
+                  </mat-error>
+                </mat-form-field>
+
+            </div>
+          </mat-card>                                                                                                       
+  </div>
+    </div>
+    <div class="divCenterButton">
+  <div mat-dialog-actions>
+    <button mat-button cdkFocusInitial (click)="InsertarProducto()" [mat-dialog-close]>Ok</button>
+    <button mat-button [mat-dialog-close]>Cancelar</button>
+  </div>
+  </div>
+  </mat-card>
