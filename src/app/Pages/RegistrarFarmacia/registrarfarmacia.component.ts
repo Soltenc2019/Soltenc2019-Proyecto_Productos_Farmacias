@@ -73,7 +73,6 @@ export class RegistrarfarmaciaComponent implements OnInit {
       this.RegistrarService.getFarmaciasId(data).subscribe(res=>{
         this.CompararFoundById=res;
         this.dataValue = this.CompararFoundById[0];
-        console.log( this.dataValue);
         this.dialog.open(DialogModificarFarmacia, {
           width: '70%',
           data: this.dataValue
@@ -185,9 +184,7 @@ export class DialogModificarFarmacia {
         no_Municipio:Farmacia[0].no_Municipio,
         co_Postal:Farmacia[0].co_Postal
     };
-      console.log(farmacia);
-
-
+   
     if (!Farmacia[0].no_Farmacia || !Farmacia[0].no_Contacto || !Farmacia[0].no_Correo || 
       !Farmacia[0].nu_Telefono || !Farmacia[0].nu_Movil || !Farmacia[0].no_Calle || 
       !Farmacia[0].no_Pais || !Farmacia[0].no_Municipio || !Farmacia[0].co_Postal) {
