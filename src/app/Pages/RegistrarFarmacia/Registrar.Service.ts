@@ -19,7 +19,7 @@ const httpOptions = {
 })
 export class RegistrarService{
     //configUrl='http://localhost:3000/farmacias';
-      constructor(private http: HttpClient, private globals : Globals){ }
+    constructor(private http: HttpClient, private globals : Globals){ }
     configUrl=this.globals.urlService + 'farmacias';
 
 
