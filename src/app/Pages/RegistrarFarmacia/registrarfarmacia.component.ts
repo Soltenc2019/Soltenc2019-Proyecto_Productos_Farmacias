@@ -20,7 +20,7 @@ let ELEMENT_DATA: Farmacia[] = [
 
 
 export class RegistrarfarmaciaComponent implements OnInit {
-    displayedColumns: string[] = ['id', 'co_ruc' , 'no_Farmacia', 'modificar', 'eliminar'];
+    displayedColumns: string[] = ['id', 'co_Cif' , 'no_Farmacia', 'modificar', 'eliminar'];
     dataSource = new MatTableDataSource(ELEMENT_DATA);
   
     applyFilter(filterValue: string) {
@@ -73,6 +73,7 @@ export class RegistrarfarmaciaComponent implements OnInit {
       this.RegistrarService.getFarmaciasId(data).subscribe(res=>{
         this.CompararFoundById=res;
         this.dataValue = this.CompararFoundById[0];
+        console.log( this.dataValue);
         this.dialog.open(DialogModificarFarmacia, {
           width: '70%',
           data: this.dataValue
@@ -173,18 +174,23 @@ export class DialogModificarFarmacia {
       farmacia = {
         id:this.data[0].id,
         co_Farmacia: this.data[0].co_Farmacia,
-        co_ruc:this.data[0].co_ruc,
+        co_Cif:this.data[0].co_Cif,
         no_Farmacia:Farmacia[0].no_Farmacia,
         no_Contacto:Farmacia[0].no_Contacto,
         no_Correo:Farmacia[0].no_Correo,
         nu_Telefono:Farmacia[0].nu_Telefono,
-        nu_celular:Farmacia[0].nu_celular,
-        no_Direccion:Farmacia[0].no_Direccion,
+        nu_Movil:Farmacia[0].nu_Movil,
+        no_Calle:Farmacia[0].no_Calle,
+        no_Pais:Farmacia[0].no_Pais,
+        no_Municipio:Farmacia[0].no_Municipio,
+        co_Postal:Farmacia[0].co_Postal
     };
+      console.log(farmacia);
+
 
     if (!Farmacia[0].no_Farmacia || !Farmacia[0].no_Contacto || !Farmacia[0].no_Correo || 
-      !Farmacia[0].nu_Telefono || !Farmacia[0].nu_celular || !Farmacia[0].no_Farmacia ||
-      !Farmacia[0].no_Direccion  ) {
+      !Farmacia[0].nu_Telefono || !Farmacia[0].nu_Movil || !Farmacia[0].no_Calle || 
+      !Farmacia[0].no_Pais || !Farmacia[0].no_Municipio || !Farmacia[0].co_Postal) {
       this.mensajeRellenarData();
     } else {
       this.RegistrarService.updateFarmacia(id,farmacia).subscribe(res=>{
@@ -221,9 +227,23 @@ export class DialogAgregarFarmacia {
     Validators.maxLength(9),
   ]);
 
-  direccionFormControl= new FormControl('', [
+  postalFormControl = new FormControl('', [
+    Validators.required,
+    Validators.maxLength(7),
+  ]);
+
+  municipioFormControl= new FormControl('', [
     Validators.required,
     
+  ]);
+
+  paisFormControl= new FormControl('', [
+    Validators.required,
+    
+  ]);
+
+  calleFormControl= new FormControl('', [
+    Validators.required,
   ]);
 
   contactoFormControl= new FormControl('', [
@@ -234,7 +254,7 @@ export class DialogAgregarFarmacia {
     Validators.required,
   ]);
 
-  rucFarmaciaFormControl= new FormControl('', [
+  cifFarmaciaFormControl= new FormControl('', [
     Validators.required,
     Validators.maxLength(11),
   ]);
@@ -249,13 +269,17 @@ export class DialogAgregarFarmacia {
     @Inject(MAT_DIALOG_DATA) public data: any) { }
 
     co_Farmacia : string;
-    co_ruc : string;
+    co_Cif : string;
     no_Farmacia : string;
     no_Contacto : string;
     no_Correo : string ;
     nu_Telefono: number;
-    nu_celular:number;
+    nu_Movil:number;
     no_Direccion:string;
+    no_Calle:string;
+    no_Pais:string;
+    no_Municipio:string;
+    co_Postal:number;
 
 
     public Farmacia = new FarmaciaClass
@@ -265,7 +289,7 @@ export class DialogAgregarFarmacia {
   }
 
   mensajeExito(){
-    Swal.fire ('','Se Actualizo correctamente','success')
+    Swal.fire ('','Se Agrego correctamente','success')
   }
   CloseDialog(): void {
     this.dialogRef.close();
@@ -285,18 +309,22 @@ export class DialogAgregarFarmacia {
       farmacia = {
           id:0,
           co_Farmacia: this.co_Farmacia,
-          co_ruc:this.co_ruc,
+          co_Cif:this.co_Cif,
           no_Farmacia:this.no_Farmacia,
           no_Contacto:this.no_Contacto,
           no_Correo:this.no_Correo,
           nu_Telefono:this.nu_Telefono,
-          nu_celular:this.nu_celular,
-          no_Direccion:this.no_Direccion,
+          nu_Movil:this.nu_Movil,
+          no_Calle:this.no_Calle,
+          no_Pais:this.no_Pais,
+          no_Municipio:this.no_Municipio,
+          co_Postal:this.co_Postal
       };
   
-      if (!this.co_Farmacia || !this.co_ruc || !this.no_Farmacia 
+      if (!this.co_Farmacia || !this.co_Cif || !this.no_Farmacia 
         || !this.no_Contacto || !this.no_Correo || !this.nu_Telefono
-        || !this.nu_celular || !this.no_Direccion) {
+        || !this.nu_Movil || !this.no_Calle || !this.no_Pais
+        || !this.no_Municipio || !this.co_Postal) {
           this.mensajeRellenarData();
       } else{
         

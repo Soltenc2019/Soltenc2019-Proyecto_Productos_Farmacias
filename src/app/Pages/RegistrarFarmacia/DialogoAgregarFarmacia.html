@@ -9,11 +9,11 @@
         </mat-error>
     </mat-form-field>
   <mat-form-field  style="margin-left: 3%;">
-        <input matInput #coRuc maxlength="11" placeholder="RUC" [(ngModel)]="co_ruc" [formControl]="rucFarmaciaFormControl">
-        <mat-hint align="end">{{coRuc.value.length}} / 11</mat-hint>
-        <mat-error *ngIf="rucFarmaciaFormControl.hasError('rucarmacia') && !rucFarmaciaFormControl.hasError('required')">
+        <input matInput #coCif maxlength="11" placeholder="CIF" [(ngModel)]="co_Cif" [formControl]="cifFarmaciaFormControl">
+        <mat-hint align="end">{{coCif.value.length}} / 11</mat-hint>
+        <mat-error *ngIf="cifFarmaciaFormControl.hasError('rucarmacia') && !cifFarmaciaFormControl.hasError('required')">
           </mat-error>
-          <mat-error *ngIf="rucFarmaciaFormControl.hasError('required')">
+          <mat-error *ngIf="cifFarmaciaFormControl.hasError('required')">
               Razón Social es <strong>requerido</strong>
             </mat-error>
   </mat-form-field>
@@ -62,13 +62,38 @@
         </mat-error>
   </mat-form-field>
   <mat-form-field style="margin-left: 3%; width: 40%;" >
-        <input matInput  placeholder="Direccion" [formControl]="direccionFormControl" [(ngModel)]="no_Direccion">
-        <mat-error *ngIf="direccionFormControl.hasError('direccion') && !direccionFormControl.hasError('required')">
+        <input matInput  placeholder="Calle" [formControl]="calleFormControl" [(ngModel)]="no_Calle">
+        <mat-error *ngIf="calleFormControl.hasError('calle') && !calleFormControl.hasError('required')">
         </mat-error>
-        <mat-error *ngIf="direccionFormControl.hasError('required')">
-          Direccion es <strong>requerido</strong>
+        <mat-error *ngIf="calleFormControl.hasError('required')">
+          Calle es <strong>requerido</strong>
         </mat-error>
   </mat-form-field>
+  <mat-form-field style="margin-left: 3%; width: 40%;" >
+    <input matInput  placeholder="Pais" [formControl]="paisFormControl" [(ngModel)]="no_Pais">
+    <mat-error *ngIf="paisFormControl.hasError('pais') && !paisFormControl.hasError('required')">
+    </mat-error>
+    <mat-error *ngIf="paisFormControl.hasError('required')">
+      Pais es <strong>requerido</strong>
+    </mat-error>
+</mat-form-field>
+<mat-form-field style="margin-left: 3%; width: 40%;" >
+  <input matInput  placeholder="Municipio" [formControl]="municipioFormControl" [(ngModel)]="no_Municipio">
+  <mat-error *ngIf="municipioFormControl.hasError('direccion') && !municipioFormControl.hasError('required')">
+  </mat-error>
+  <mat-error *ngIf="municipioFormControl.hasError('required')">
+    Municipio es <strong>requerido</strong>
+  </mat-error>
+</mat-form-field>
+<mat-form-field style="margin-left: 3%; width: 20%;" >
+  <input matInput #co_postal placeholder="Codigo Postal" maxlength="7" [formControl]="postalFormControl" [(ngModel)]="co_Postal">
+  <mat-hint align="end">{{co_postal.value.length}} / 7</mat-hint>
+  <mat-error *ngIf="postalFormControl.hasError('telefono') && !postalFormControl.hasError('required')">
+  </mat-error>
+  <mat-error *ngIf="postalFormControl.hasError('required')">
+    Codigo Postal es <strong>requerido</strong>
+  </mat-error>
+</mat-form-field>
 <div mat-dialog-actions>
     <div style="margin: 0 auto;
     display: inline-block;">

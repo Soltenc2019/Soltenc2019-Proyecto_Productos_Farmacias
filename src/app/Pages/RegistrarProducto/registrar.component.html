@@ -1,10 +1,5 @@
-<mat-card class="mat-card"> 
-    <mat-card-title style="text-align: center;font-size: 20px;">
-      <hr>
-      Registros de Productos
-      <hr>
-    </mat-card-title>
-    <mat-card-content>
+      <div style="padding: 2%;">
+      <h1 style="text-align: center;">Registros de Productos</h1>
         <mat-form-field>
               <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Buscar">
         </mat-form-field>
@@ -71,13 +66,4 @@
             <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
             <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
           </table>
-
-          <!-- <mat-paginator [length]="length"
-              [pageSize]="pageSize"
-              [pageSizeOptions]="pageSizeOptions"
-              (page)="pageEvent = $event">
-</mat-paginator> -->
-          
-    </mat-card-content>
-   </mat-card> 
-
+        </div>
